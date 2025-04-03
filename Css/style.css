@@ -1,0 +1,268 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* rec moives css  */
+.posters-div {
+    display: flex;
+    flex-direction: row;
+
+    overflow-x: auto;
+    /* white-space: nowrap; */
+    gap: 10px;
+    scroll-behavior: smooth;
+    /* Enables smooth scrolling */
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    /* -ms-overflow-style: none; */
+    /* Internet Explorer 10+ */
+
+
+}
+
+.poster {
+    cursor: pointer;
+    width: 19%;
+
+}
+
+.poster>img {
+    border-radius: 10px;
+
+}
+
+.poster>h5,
+p {
+    margin: 5px 0px 0px 0px;
+
+}
+
+.text-align-center {
+    text-align: center !important;
+}
+
+.Sec_nav {
+    display: grid;
+    grid-template-columns: 76% 25%;
+}
+
+.bg-none {
+    background-color: white !important;
+}
+
+.btn-col {
+    background-color: rgb(206, 81, 81) !important;
+}
+
+
+.Sec_nav_font {
+    font-size: 0.8rem;
+}
+
+
+
+.card2 {
+    border: 0px;
+}
+
+@media (min-width:578px) and (max-width:767px) {
+    .rec_mov_font {
+        font-size: 0.5rem !important;
+
+    }
+
+}
+
+@media (max-width: 994px) {
+
+    .container,
+    .container-sm {
+        max-width: 100% !important;
+    }
+}
+
+
+@media (min-width:576px) and (max-width:800px) {
+    .Some_other>img {
+        height: 110px;
+    }
+}
+
+@media (min-width:0px) and (max-width:577px) {
+    .Some_other>img {
+        height: 50px;
+    }
+}
+
+.gLXTpm {
+    scroll-behavior: smooth;
+    transition: transform 1000ms;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(11, calc(20% - 25.6px));
+    grid-template-rows: repeat(1, 1fr);
+    grid-auto-flow: column;
+    gap: 8px 32px;
+    overflow: scroll hidden;
+    transform: initial;
+
+
+}
+
+.cur-pointer {
+    cursor: pointer !important;
+}
+
+.OtherHead {
+    grid-column: span 5;
+}
+
+.footer-h {
+    color: rgb(165, 165, 165);
+    cursor: pointer;
+}
+
+.footer-font {
+    font-size: 0.7rem;
+    color: rgb(127, 127, 127);
+}
+
+.footer-font:hover {
+    color: rgb(255, 255, 255);
+}
+
+.bg-black1 {
+    background-color: rgb(51, 51, 56);
+}
+
+.card {
+    --bs-card-spacer-x: 0rem;
+}
+
+@media (max-width:930px) {
+    .disp {
+        display: none;
+    }
+
+    .card {
+        --bs-card-spacer-x: 0rem;
+    }
+
+    .gap-5 {
+        gap: 2rem !important;
+    }
+
+    .mobileIMG>img {
+        width: 133%;
+    }
+
+    .card-group {
+        display: flex;
+    }
+
+    .scroll-container>img {
+        height: 100px;
+    }
+
+    .card-body>p {
+        font-size: 12px;
+        display: none;
+    }
+
+    .card-title {
+        font-size: 12px;
+        white-space: normal;
+        /* Allows text to wrap */
+        word-wrap: break-word;
+        /* Breaks long words if needed */
+        overflow-wrap: break-word;
+        /* Ensures long words break properly */
+        max-width: 100%;
+        /* Keeps it inside the card */
+        display: block;
+        /* Ensures the title behaves like a block element */
+    }
+
+    .nav-link {
+        padding-top: 15px;
+    }
+
+    .container-fluid {
+        gap: 1rem;
+    }
+
+    .navbar-toggler-icon {
+        width: 20px;
+    }
+
+    .navbar-toggler {
+        padding: 0px 9px;
+    }
+
+    .poster {
+        width: 30%;
+
+    }
+
+    .poster>h5 {
+        font-size: small;
+        font-weight: 900;
+    }
+
+    .poster>h5,
+    p {
+        font-size: small;
+    }
+}
+
+
+.last-colo {
+    color: azure !important;
+    border-radius: 20px;
+}
+
+.last-colo:hover {
+    color: rgb(0, 0, 0) !important;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1260px;
+    }
+}
+
+.btnSIGN {
+    border-color: red;
+    padding: 2px 15px;
+    font-size: small;
+}
+
+
+.svglogoimg {
+    cursor: pointer;
+    width: 150px;
+    height: 33px;
+
+}
+
+
+
+
+
+/* rec moives css  */
+/* .poster-div{
+
+} */

@@ -1,0 +1,137 @@
+ .book-container {
+     background-color: white;
+     border-radius: 8px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     padding: 30px;
+     max-width: 100%;
+     gap: 1rem;
+     position: relative;
+ }
+
+
+
+ .book-cover {
+
+     border-radius: 10px;
+ }
+
+ .book-title {
+     font-size: 24px;
+     color: #333;
+ }
+
+ .book-details,
+ .rating,
+ .price,
+ .savings,
+ .edition,
+ .shipping {
+     margin: 10px 0;
+ }
+
+ .price {
+     font-size:xx-large;
+     font-weight: bolder;
+ }
+
+ .original-price {
+     text-decoration: line-through;
+     color: gray;
+     font-size: 15px;
+ }
+
+ .width_185 {
+     width: 185px;
+     border-radius: 100px !important;
+ }
+
+ .action-buttons {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     /* border: 2px solid red; */
+     margin: auto;
+     width: 300px;
+     height: 228px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ }
+
+ label {
+     margin-right: 10px;
+ }
+
+ select {
+     margin-right: 10px;
+ }
+
+ .btn {
+     background-color: #4CAF50;
+     border: none;
+     color: white;
+     padding: 10px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     margin-top: 10px;
+     margin-right: 5px;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+
+ .btn.buy-now {
+     background-color: #FF9800;
+ }
+
+ .btn.add-to-wishlist {
+     background-color: #2196F3;
+ }
+
+ .bookImg {
+     display: flex;
+     justify-content: center;
+     height: 350px;
+ }
+
+ .mobileDIVIMG {
+     width: 300px;
+ }
+.mobileDIV {
+    max-width: 500px;
+}
+
+ @media (min-width:0px) and (max-width: 800px) {
+
+     .book-container {
+         flex-direction: column;
+         gap: 1.5rem;
+         justify-content: center;
+         align-items: center;
+     }
+
+     .mobileDIV {
+         width: 100%;
+     }
+
+     .mobileDIVIMG {
+         margin: 0px auto;
+     }
+
+     .width_185 {
+         width: 100%;
+     }
+
+     .action-buttons {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         /* border: 2px solid red; */
+         margin: auto;
+         width: 300px;
+         height: 228px;
+         box-shadow:none;
+     }
+
+
+ }
