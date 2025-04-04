@@ -1,0 +1,265 @@
+ body {
+     font-family: Arial, sans-serif;
+
+     background-color: #f4f4f4;
+     margin: 0;
+     padding: 0;
+ }
+
+
+ /* ----------modal-------------- */
+ .modal2 {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    /* max-width: 500px; */
+    text-align: center;
+}
+
+.seat-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.seat-number {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #eee;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.seat-number.selectedmodal {
+    background: #ff4f68;
+    color: white;
+}
+
+.ticket-types {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.ticket {
+    text-align: center;
+}
+
+.ticket p {
+    margin: 5px 0;
+}
+
+.select-btn {
+    background: #ff4f68;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.select-btn:hover {
+    background: #e0445e;
+}
+
+ .container1 {
+     width: 100%;
+     /* margin: auto; */
+     background: white;
+     padding: 9px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+     border-radius: 10px;
+ }
+
+ .movie-header {
+     font-size: 1.1rem;
+     margin-bottom: 5px;
+ }
+
+ .movie-info {
+     color: gray;
+     font-size: 14px;
+     margin-bottom: 20px;
+ }
+
+ .showtime-container {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     overflow-x: auto;
+     white-space: nowrap;
+     gap: 10px;
+     padding: 10px 0;
+ }
+
+ .showtime {
+     padding: 3px 27px;
+     border-radius: 5px;
+     border: 1px solid #008000;
+     color: #008000;
+     background-color: white;
+     font-size: 0.7rem;
+     font-weight: bold;
+     cursor: pointer;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .showtime.active {
+     background-color: #2dc492;
+     color: white;
+ }
+
+ .showtime span {
+     font-size: 0.6rem;
+     font-weight: normal;
+ }
+
+ .ticket-selector {
+     float: right;
+     padding: 2px 3px;
+     border-radius: 5px;
+     border: 1px solid gray;
+     font-size: 0.8rem;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     /* margin: 1px 20px; */
+     height:100%;
+    width: 100%;
+ }
+ .tickClose{
+    align-items: center;
+    margin: 0px 1rem;
+    height: 42px;
+    width: 118px;
+ }
+
+ @media screen and (max-width:700px) {
+    .ticket-selector {
+        float: right;
+        padding: 8px 12px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        font-size: 0.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        height:100%;
+       width: 100%;
+    }
+ }
+
+ .close {
+     float: right;
+     font-size: 18px;
+     cursor: pointer;
+     margin-left: 10px;
+ }
+
+ 
+    .container2 {
+        width: 100%;
+        margin: auto;
+        background: white;
+        padding: 23px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 2px;
+        border-radius: 10px;
+    }
+
+ .screen {
+     width: 25%;
+     height: 40px;
+     background: #ccc;
+     margin: 20px auto;
+     text-align: center;
+     line-height: 40px;
+     font-weight: bold;
+     border-radius: 5px;
+ }
+
+ .seating {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+    
+ }
+
+ .row {
+     display: flex;
+     justify-content: center;
+     margin: 5px 0;
+     flex-wrap: nowrap;
+ }
+
+ .seat {
+    width: 49px;
+    height: 35px;
+    margin: 4px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #444;
+}
+
+ .available {
+     background-color: #ffffff;
+     border: 1px solid #444;
+ }
+
+ .bestseller {
+    background: rgba(231, 203, 55, 0.3); 
+     border: 1px solid #444;
+ }
+
+ .selected {
+     background-color: #32CD32;
+     color: white;
+     border: 1px solid #444;
+ }
+
+ .blank {
+     visibility: hidden;
+     width: 35px;
+     height: 35px;
+ }
+
+ .info {
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+     margin-top: 20px;
+ }
+
+ .info div {
+     display: flex;
+     align-items: center;
+     gap: 5px;
+ }
+
+ .info span {
+     width: 20px;
+     height: 20px;
+     display: inline-block;
+     border: 1px solid #444;
+ }
+
+
+
+ 
