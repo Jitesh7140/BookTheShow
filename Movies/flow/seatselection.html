@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../seatslection.css">
+    <!-- <link rel="stylesheet"  href="../booking.css"> -->
+    <style>
+        /* modal css------------------- */
+    </style>
+</head>
+
+<body>
+    <!-- ----modal------ -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal2">
+                    <h2>How Many Seats?</h2>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2784/2784461.png" alt="Van Icon" width="80">
+                    <div class="seat-numbers" id="seatNumbers"></div>
+                    <hr>
+                    <div class="ticket-types">
+                        <div class="ticket">
+                            <p><strong>SILVER</strong></p>
+                            <p>Rs. 200</p>
+                            <p style="color: green;">Available</p>
+                        </div>
+                        <div class="ticket">
+                            <p><strong>EXECUTIVE</strong></p>
+                            <p>Rs. 380</p>
+                            <p style="color: green;">Available</p>
+                        </div>
+                        <div class="ticket">
+                            <p><strong>PREMIERE</strong></p>
+                            <p>Rs. 380</p>
+                            <p style="color: green;">Available</p>
+                        </div>
+                    </div>
+                    <button data-bs-dismiss="modal" class="select-btn" onclick="ticketchange()">Select Seats</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container1">
+        <div class="d-flex flex-row justify-content-between">
+
+            <div class="my-2 mx-2">
+                <div class="movie-header ">Flow</div>
+                <div class="movie-info">Cinepolis: Nexus Seawoods, Navi Mumbai | Thursday, Apr 3, 2025, 12:45 PM</div>
+            </div>
+            <div class=" d-flex tickClose">
+                <div id="ticket-selector" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    class="ticket-selector">Tickets ✏️</div>
+                <span class="close">&times;</span>
+
+            </div>
+        </div>
+        <div class="showtime-container mx-2">
+            <div class="showtime active" onclick="selectShowtime(this)">12:45 PM <span>DOLBY 7.1</span></div>
+            <div class="showtime" onclick="selectShowtime(this)">01:40 PM <span>DOLBY 7.1</span></div>
+            <div class="showtime" onclick="selectShowtime(this)">02:50 PM <span>DOLBY 7.1</span></div>
+            <div class="showtime" onclick="selectShowtime(this)">03:55 PM <span>DOLBY 7.1</span></div>
+            <div class="showtime" onclick="selectShowtime(this)">04:50 PM <span>DOLBY 7.1</span></div>
+            <div class="showtime" onclick="selectShowtime(this)">04:55 PM <span>DOLBY 7.1</span></div>
+            <div class="showtime" onclick="selectShowtime(this)">06:00 PM <span>DOLBY 7.1</span></div>
+            <div class="showtime" onclick="selectShowtime(this)">06:10 PM <span>DOLBY 7.1</span></div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="container2">
+        <h2>Seat Selection</h2>
+        <!-- <label for="numSeats">Number of Seats to Book:</label>
+        <input type="number" id="numSeats" value="5" min="1" max="10"> -->
+        <div class="screen">SCREEN</div>
+        <div class="seating" id="seating">
+             
+        </div>
+        <div class="d-flex justify-content-center gap-5 fw-bold">
+            <p>Selected Seats: <span id="selectedSeats">0</span></p>
+            <p>Total Price: Rs. <span id="totalPrice">0</span></p>
+            
+        </div>
+        <button data-bs-dismiss="modal" class="select-btn" onclick="window.open('./payment.html','_self')">Book
+            Now</button>
+    </div>
+
+    <div class="info" style="position: sticky; top: 10px;">
+        <div><span class="available"></span> Available</div>
+        <div><span class="bestseller"></span> Bestseller</div>
+        <div><span class="selected"></span> Selected</div>
+    </div>
+
+    <script>
+
+        window.onload = function () {
+            document.getElementById("ticket-selector").click();
+        };
+
+
+        function selectShowtime(element) {
+            document.querySelectorAll('.showtime').forEach(item => {
+                item.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // modal-----
+
+        function ticketchange() {
+
+            let selectedTicket = document.getElementsByClassName('selectedmodal');
+            let NumTicket = selectedTicket[0].innerHTML;
+            document.getElementById('ticket-selector').setAttribute("value", NumTicket);
+            console.log(NumTicket)
+            document.getElementById('ticket-selector').innerText = " " + NumTicket + " Tickets ✏️";
+            document.getElementById('ticket-selector').setAttribute("value", NumTicket);
+
+        }
+
+        document.addEventListener("DOMContentLoaded", function (e) {
+            const seatContainer = document.getElementById("seatNumbers");
+            for (let i = 1; i <= 10; i++) {
+                let seat = document.createElement("div");
+                seat.classList.add("seat-number");
+                seat.textContent = i;
+                seat.addEventListener("click", function () {
+                    document.querySelectorAll(".seat-number").forEach(s => s.classList.remove("selectedmodal"));
+                    seat.classList.add("selectedmodal");
+                });
+                seatContainer.appendChild(seat);
+            }
+
+        });
+
+
+
+        const seatLayout = [
+            ['available', 'available', 'available', 'available', 'blank', 'blank', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'blank', 'blank', 'available', 'available', 'available', 'available'],
+            ['available', 'available', 'available', 'available', 'blank', 'blank', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'blank', 'blank', 'available', 'available', 'available', 'available'],
+            ['available', 'available', 'available', 'available', 'blank', 'blank', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'available', 'blank', 'blank', 'available', 'available', 'available', 'available'],
+            ['available', 'available', 'available', 'available', 'blank', 'blank', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'blank', 'blank', 'available', 'available', 'available', 'available'],
+
+
+            ['available', 'available', 'available', 'available', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'available', 'available', 'available', 'available'],
+            ['available', 'available', 'available', 'available', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'available', 'available', 'available', 'available'],
+            ['available', 'available', 'available', 'available', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'bestseller', 'available', 'available', 'available', 'available'],
+
+
+        ];
+
+        const prices = {
+            available: 240,
+            bestseller: 260,
+            blank: 0
+        };
+
+        let selectedSeats = [];
+        let totalPrice = 0;
+
+        function createSeating() {
+            const seatingDiv = document.getElementById('seating');
+            seatingDiv.innerHTML = '';
+            let seatNumber = 1;
+            seatLayout.forEach((row, rowIndex) => {
+                const rowDiv = document.createElement('div');
+                rowDiv.classList.add('row');
+                row.forEach((seatType, seatIndex) => {
+                    const seat = document.createElement('div');
+                    seat.classList.add('seat', seatType);
+                    seat.dataset.row = rowIndex;
+                    seat.dataset.col = seatIndex;
+                    seat.dataset.type = seatType;
+                    if (seatType !== 'blank') {
+                        seat.textContent = seatNumber++;
+                        seat.addEventListener('click', () => selectSeats(seat, seatType));
+                    }
+                    rowDiv.appendChild(seat);
+                });
+                seatingDiv.appendChild(rowDiv);
+            });
+        }
+
+        function selectSeats(seat, seatType) {
+
+            let selectedTicket = document.getElementsByClassName('selectedmodal');
+            let NumTicket = selectedTicket[0].innerHTML;
+            document.getElementById('ticket-selector').setAttribute("value", NumTicket);
+            // console.log(NumTicket)
+
+            document.getElementById('ticket-selector').innerText = " " + NumTicket + " Tickets ✏️";
+            document.getElementById('ticket-selector').setAttribute("value", NumTicket);
+
+
+
+            if (seatType === 'blank') return;
+
+            let numSeats = parseInt(NumTicket);
+
+            if (selectedSeats.length >= numSeats) {
+                let firstSeat = selectedSeats.shift();
+                firstSeat.classList.remove('selected');
+                totalPrice -= prices[firstSeat.dataset.type];
+            }
+
+            seat.classList.add('selected');
+            selectedSeats.push(seat);
+            totalPrice += prices[seatType];
+
+            document.getElementById('selectedSeats').textContent = selectedSeats.length;
+            document.getElementById('totalPrice').textContent = totalPrice;
+        }
+
+        createSeating();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

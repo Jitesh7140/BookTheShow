@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Summary</title>
+    <style>
+        .container01 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .booking-summary {
+            background: white;
+            padding: 20px;
+            display: flex;
+            width: 35%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+        }
+
+        h2 {
+            color: red;
+            text-align: center;
+        }
+
+        .ticket-info,
+        .fees,
+        .subtotal,
+        .donation,
+        .amount-payable,
+        .ticket-type {
+            margin: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .price,
+        .subtotal span,
+        .amount-payable span {
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: red;
+        }
+
+        button {
+            width: 100%;
+            background: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:900px) {
+            .booking-summary {
+                font-size: 0.8rem;
+                width: 86%;
+            }
+        }
+
+        @media (min-width:900px) and (max-width:1300px) {
+            .booking-summary {
+                font-size: 0.8rem;
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container01">
+        <div class="booking-summary">
+            <div id="bookedSection">
+
+
+                <h2>BOOKING SUMMARY</h2>
+                <div class="ticket-info">
+                    <p style="width: 50%;"><strong>NORMAL - C6, C7 ( 2 Tickets )</strong></p>
+
+                    <p style="width: 50%; text-align: end;" class="price">Rs. 900.00</p>
+                </div>
+                <div class="fees">
+
+                    <p>Convenience Fees: <span>Rs. 106.20</span></p>
+                    <ul style="margin: 0px;">
+                        <li>Base Amount: Rs. 90.00</li>
+                        <li>Central GST (9%): Rs. 8.10</li>
+                        <li>State GST (9%): Rs. 8.10</li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="subtotal">
+                    <p>Sub Total: <span>Rs. 1006.20</span></p>
+                </div>
+                <div class="donation">
+                    <label><input type="checkbox" id="donate" onchange="toggleDonation()"> Donate to BookAChange (+Rs.
+                        2)</label>
+                </div>
+                <p class="state">Your current state is <span class="highlight">Maharashtra</span></p>
+                <hr>
+                <div class="amount-payable">
+                    <p>Amount Payable: <span id="totalAmount">Rs. 1006.20</span></p>
+                </div>
+                <div class="ticket-type">
+                    <label><input type="radio" name="ticketType" checked> M-Ticket</label>
+                    <label><input type="radio" name="ticketType"> Box Office Pickup</label>
+                </div>
+            </div>
+            <button onclick="proceedPayment('bookedSection')">Proceed</button>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        let baseAmount = 1006.20;
+        function toggleDonation() {
+            let checkbox = document.getElementById("donate");
+            let totalAmount = checkbox.checked ? baseAmount + 2 : baseAmount;
+            document.getElementById("totalAmount").innerText = `Rs. ${totalAmount.toFixed(2)}`;
+        }
+
+        function proceedPayment(sectionId) {
+           
+            window.print()
+            
+             
+            
+        }
+
+    </script>
+</body>
+
+</html>
